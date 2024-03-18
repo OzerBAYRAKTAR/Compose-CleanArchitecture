@@ -5,6 +5,9 @@ import com.bayraktar.fakestoreapp.data.model.NewProduct
 import com.bayraktar.fakestoreapp.data.model.Products
 import com.bayraktar.fakestoreapp.data.remote.api.CartApiService
 import com.bayraktar.fakestoreapp.data.remote.api.ProductApiService
+import com.bayraktar.fakestoreapp.util.APIResponse
+import com.bayraktar.fakestoreapp.util.BaseResponse
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -15,12 +18,12 @@ import javax.inject.Inject
 
 interface ProductRepository {
 
-    suspend fun getAllProducts(): Response<List<Products>>
-    suspend fun getSingleProduct(id: Int): Response<Products>
-    suspend fun getProductByLimit(limit: Int): Response<List<Products>>
-    suspend fun getAllCategories(): Response<Categories>
-    suspend fun specificCategorie(Categorie: String): Response<List<Products>>
-    suspend fun createProduct(@Body product: NewProduct): Response<Products>
-    suspend fun deleteProduct(id: Int): Response<Void>
+    suspend fun getAllProducts(): Flow<APIResponse<BaseResponse<List<Products>>>>
+    suspend fun getSingleProduct(id: Int): Flow<APIResponse<BaseResponse<Products>>>
+    suspend fun getProductByLimit(limit: Int): Flow<APIResponse<BaseResponse<List<Products>>>>
+    suspend fun getAllCategories(): Flow<APIResponse<BaseResponse<Categories>>>
+    suspend fun specificCategorie(Categorie: String): Flow<APIResponse<BaseResponse<List<Products>>>>
+    suspend fun createProduct(@Body product: NewProduct): Flow<APIResponse<BaseResponse<Products>>>
+    suspend fun deleteProduct(id: Int): Flow<APIResponse<BaseResponse<Void>>>
 
 }
