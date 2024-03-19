@@ -14,15 +14,15 @@ class UserRepositoryImp @Inject constructor(
     private val api: UserApiService
 ):UserRepository {
     override suspend fun getAllUsers(): Flow<APIResponse<BaseResponse<Users>>> {
-        TODO("Not yet implemented")
+        return api.getAllUsers()
     }
 
     override suspend fun getSingleUser(id: Int): Flow<APIResponse<BaseResponse<UsersItem>>> {
-        TODO("Not yet implemented")
+        return api.getSingleUser(id)
     }
 
     override suspend fun getUserByLimit(limit: Int): Flow<APIResponse<BaseResponse<Users>>> {
-        TODO("Not yet implemented")
+        return api.getUserByLimit(limit)
     }
 
 }

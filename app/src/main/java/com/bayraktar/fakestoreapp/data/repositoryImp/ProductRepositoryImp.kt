@@ -15,31 +15,31 @@ class ProductRepositoryImp @Inject constructor(
     private val api: ProductApiService
 ):ProductRepository{
     override suspend fun getAllProducts(): Flow<APIResponse<BaseResponse<List<Products>>>> {
-        TODO("Not yet implemented")
+        return api.getAllProducts()
     }
 
     override suspend fun getSingleProduct(id: Int): Flow<APIResponse<BaseResponse<Products>>> {
-        TODO("Not yet implemented")
+        return api.getSingleProduct(id)
     }
 
     override suspend fun getProductByLimit(limit: Int): Flow<APIResponse<BaseResponse<List<Products>>>> {
-        TODO("Not yet implemented")
+        return api.getProductByLimit(limit)
     }
 
     override suspend fun getAllCategories(): Flow<APIResponse<BaseResponse<Categories>>> {
-        TODO("Not yet implemented")
+        return api.getAllCategories()
     }
 
-    override suspend fun specificCategorie(Categorie: String): Flow<APIResponse<BaseResponse<List<Products>>>> {
-        TODO("Not yet implemented")
+    override suspend fun specificCategorie(categorie: String): Flow<APIResponse<BaseResponse<List<Products>>>> {
+        return api.specificCategorie(categorie)
     }
 
     override suspend fun createProduct(product: NewProduct): Flow<APIResponse<BaseResponse<Products>>> {
-        TODO("Not yet implemented")
+        return api.createProduct(product)
     }
 
     override suspend fun deleteProduct(id: Int): Flow<APIResponse<BaseResponse<Void>>> {
-        TODO("Not yet implemented")
+        return api.deleteProduct(id)
     }
 
 }

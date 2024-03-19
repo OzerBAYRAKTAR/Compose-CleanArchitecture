@@ -11,7 +11,7 @@ class LoginRepositoryImp @Inject constructor(
     private val api: LoginApiService
 ): LoginRepository{
     override suspend fun getLogin(cart: LoginModel): Response<TokenModel> {
-        TODO("Not yet implemented")
+        return api.getLogin(cart)
     }
 
 }

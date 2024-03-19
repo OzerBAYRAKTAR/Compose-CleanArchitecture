@@ -13,30 +13,30 @@ import javax.inject.Inject
 
 
 class CartRepositoryImp @Inject constructor(
-     private val pi: CartApiService
+     private val api: CartApiService
 ):CartRepository {
     override suspend fun getAllCarts(): Flow<APIResponse<BaseResponse<Carts>>> {
-        TODO("Not yet implemented")
+        return api.getAllCarts()
     }
 
     override suspend fun getSingleCart(id: Int): Flow<APIResponse<BaseResponse<CartsItem>>> {
-        TODO("Not yet implemented")
+        return api.getSingleCart(id)
     }
 
     override suspend fun getCartsByLimit(limit: Int): Flow<APIResponse<BaseResponse<Carts>>> {
-        TODO("Not yet implemented")
+        return api.getCartsByLimit(limit)
     }
 
     override suspend fun getUserCarts(id: Int): Flow<APIResponse<BaseResponse<CartsItem>>> {
-        TODO("Not yet implemented")
+        return api.getUserCarts(id)
     }
 
     override suspend fun createProduct(cart: NewCart): Flow<APIResponse<BaseResponse<Carts>>> {
-        TODO("Not yet implemented")
+        return api.createProduct(cart)
     }
 
     override suspend fun deletecart(id: Int): Flow<APIResponse<BaseResponse<Void>>> {
-        TODO("Not yet implemented")
+        return  api.deletecart(id)
     }
 
 }

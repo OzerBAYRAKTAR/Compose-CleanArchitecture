@@ -33,7 +33,7 @@ interface CartApiService {
     @GET("carts/user/{id}")
     suspend fun getUserCarts(
         @Path("id") id: Int
-    ): Flow<APIResponse<BaseResponse<Carts>>>
+    ): Flow<APIResponse<BaseResponse<CartsItem>>>
 
     @POST("/carts")
     suspend fun createProduct(@Body cart: NewCart

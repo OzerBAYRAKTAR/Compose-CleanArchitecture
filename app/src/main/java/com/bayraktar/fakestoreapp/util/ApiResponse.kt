@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import retrofit2.Response
 
-suspend fun <T> Response<T>?.getApiResponse(): Flow<APIResponse<T>> {
+ suspend fun <T> Response<T>?.getApiResponse(): Flow<APIResponse<T>> {
     try {
         return flow<APIResponse<T>> {
             emit(APIResponse.Loading())
@@ -29,7 +29,7 @@ suspend fun <T> Response<T>?.getApiResponse(): Flow<APIResponse<T>> {
                             errorResponse?.responseMessage ?: response.message()
 
                         emit(APIResponse.Error(errorMsg = errorMsg))
-                    } catch (e: Exception) {
+                    } catch (e: Exception)  {
                         val errorMsg = ErrorMsg()
                         errorMsg.code = response.code()
                         errorMsg.errorMessage = e.message ?: response.message()
