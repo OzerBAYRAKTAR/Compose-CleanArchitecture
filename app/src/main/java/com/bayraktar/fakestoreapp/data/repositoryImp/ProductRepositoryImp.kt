@@ -8,7 +8,6 @@ import com.bayraktar.fakestoreapp.domain.repository.ProductRepository
 import com.bayraktar.fakestoreapp.util.APIResponse
 import com.bayraktar.fakestoreapp.util.BaseResponse
 import kotlinx.coroutines.flow.Flow
-import retrofit2.Response
 import javax.inject.Inject
 
 class ProductRepositoryImp @Inject constructor(
@@ -30,8 +29,8 @@ class ProductRepositoryImp @Inject constructor(
         return api.getAllCategories()
     }
 
-    override suspend fun specificCategorie(categorie: String): Flow<APIResponse<BaseResponse<List<Products>>>> {
-        return api.specificCategorie(categorie)
+    override suspend fun specificCategorie(Categorie: String): Flow<APIResponse<BaseResponse<List<Products>>>> {
+        return api.specificCategorie(Categorie)
     }
 
     override suspend fun createProduct(product: NewProduct): Flow<APIResponse<BaseResponse<Products>>> {
