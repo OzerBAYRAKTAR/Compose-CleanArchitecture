@@ -14,16 +14,16 @@ interface UserApiService {
 
     @GET("/users")
     suspend fun getAllUsers(
-    ): Flow<APIResponse<BaseResponse<Users>>>
+    ): Response<APIResponse<Users>>
 
     @GET("/users/{id}")
     suspend fun getSingleUser(
         @Path("id") id: Int
-    ): Flow<APIResponse<BaseResponse<UsersItem>>>
+    ): Response<APIResponse<UsersItem>>
 
     @GET("/users/{limit}")
     suspend fun getUserByLimit(
         @Path("limit") limit: Int
-    ): Flow<APIResponse<BaseResponse<Users>>>
+    ): Response<APIResponse<Users>>
 
 }

@@ -13,31 +13,31 @@ import javax.inject.Inject
 class ProductRepositoryImp @Inject constructor(
     private val api: ProductApiService
 ):ProductRepository{
-    override suspend fun getAllProducts(): Flow<APIResponse<BaseResponse<List<Products>>>> {
+    override suspend fun getAllProducts(): Flow<APIResponse<List<Products>>> {
         return api.getAllProducts()
     }
 
-    override suspend fun getSingleProduct(id: Int): Flow<APIResponse<BaseResponse<Products>>> {
+    override suspend fun getSingleProduct(id: Int): Flow<APIResponse<Products>> {
         return api.getSingleProduct(id)
     }
 
-    override suspend fun getProductByLimit(limit: Int): Flow<APIResponse<BaseResponse<List<Products>>>> {
+    override suspend fun getProductByLimit(limit: Int): Flow<APIResponse<List<Products>>> {
         return api.getProductByLimit(limit)
     }
 
-    override suspend fun getAllCategories(): Flow<APIResponse<BaseResponse<Categories>>> {
+    override suspend fun getAllCategories(): Flow<APIResponse<Categories>> {
         return api.getAllCategories()
     }
 
-    override suspend fun specificCategorie(Categorie: String): Flow<APIResponse<BaseResponse<List<Products>>>> {
+    override suspend fun specificCategorie(Categorie: String): Flow<APIResponse<List<Products>>> {
         return api.specificCategorie(Categorie)
     }
 
-    override suspend fun createProduct(product: NewProduct): Flow<APIResponse<BaseResponse<Products>>> {
+    override suspend fun createProduct(product: NewProduct): Flow<APIResponse<Products>> {
         return api.createProduct(product)
     }
 
-    override suspend fun deleteProduct(id: Int): Flow<APIResponse<BaseResponse<Void>>> {
+    override suspend fun deleteProduct(id: Int): Flow<APIResponse<Void>> {
         return api.deleteProduct(id)
     }
 

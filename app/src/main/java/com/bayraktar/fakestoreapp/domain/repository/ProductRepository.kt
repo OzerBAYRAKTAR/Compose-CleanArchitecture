@@ -18,12 +18,12 @@ import javax.inject.Inject
 
 interface ProductRepository {
 
-    suspend fun getAllProducts(): Flow<APIResponse<BaseResponse<List<Products>>>>
-    suspend fun getSingleProduct(id: Int): Flow<APIResponse<BaseResponse<Products>>>
-    suspend fun getProductByLimit(limit: Int): Flow<APIResponse<BaseResponse<List<Products>>>>
-    suspend fun getAllCategories(): Flow<APIResponse<BaseResponse<Categories>>>
-    suspend fun specificCategorie(Categorie: String): Flow<APIResponse<BaseResponse<List<Products>>>>
-    suspend fun createProduct(@Body product: NewProduct): Flow<APIResponse<BaseResponse<Products>>>
-    suspend fun deleteProduct(id: Int): Flow<APIResponse<BaseResponse<Void>>>
+    suspend fun getAllProducts(): Flow<APIResponse<List<Products>>>
+    suspend fun getSingleProduct(id: Int): Flow<APIResponse<Products>>
+    suspend fun getProductByLimit(limit: Int): Flow<APIResponse<List<Products>>>
+    suspend fun getAllCategories(): Flow<APIResponse<Categories>>
+    suspend fun specificCategorie(Categorie: String): Flow<APIResponse<List<Products>>>
+    suspend fun createProduct(@Body product: NewProduct): Flow<APIResponse<Products>>
+    suspend fun deleteProduct(id: Int): Flow<APIResponse<Void>>
 
 }

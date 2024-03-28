@@ -12,10 +12,10 @@ import retrofit2.Response
 import javax.inject.Inject
 
 interface CartRepository {
-    suspend fun getAllCarts(): Flow<APIResponse<BaseResponse<Carts>>>
-    suspend fun getSingleCart(id: Int): Flow<APIResponse<BaseResponse<CartsItem>>>
-    suspend fun getCartsByLimit(limit: Int): Flow<APIResponse<BaseResponse<Carts>>>
-    suspend fun getUserCarts(id: Int): Flow<APIResponse<BaseResponse<CartsItem>>>
-    suspend fun createProduct(cart: NewCart): Flow<APIResponse<BaseResponse<Carts>>>
-    suspend fun deletecart(id: Int): Flow<APIResponse<BaseResponse<Void>>>
+    suspend fun getAllCarts(): Flow<APIResponse<List<CartsItem>>>
+    suspend fun getSingleCart(id: Int): Flow<APIResponse<CartsItem>>
+    suspend fun getCartsByLimit(limit: Int): Flow<APIResponse<List<CartsItem>>>
+    suspend fun getUserCarts(id: Int): Flow<APIResponse<CartsItem>>
+    suspend fun createProduct(cart: NewCart): Flow<APIResponse<CartsItem>>
+    suspend fun deletecart(id: Int): Flow<APIResponse<Void>>
 }

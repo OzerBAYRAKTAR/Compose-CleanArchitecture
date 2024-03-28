@@ -18,36 +18,36 @@ interface ProductApiService {
 
     @GET("/products")
     suspend fun getAllProducts(
-    ): Flow<APIResponse<BaseResponse<List<Products>>>>
+    ): Response<APIResponse<List<Products>>>
 
     @GET("/products/{id}")
     suspend fun getSingleProduct(
         @Path("id") id: Int
-    ): Flow<APIResponse<BaseResponse<Products>>>
+    ): Response<APIResponse<Products>>
 
 
     @GET("/products/{limit}")
     suspend fun getProductByLimit(
         @Path("limit") limit: Int
-    ): Flow<APIResponse<BaseResponse<List<Products>>>>
+    ): Response<APIResponse<List<Products>>>
 
 
     @GET("/products/categories")
     suspend fun getAllCategories(
-    ): Flow<APIResponse<BaseResponse<Categories>>>
+    ): Response<APIResponse<Categories>>
 
     @GET("/products/categories/{Categorie}")
     suspend fun specificCategorie(
         @Path("Categorie") Categorie: String
-    ): Flow<APIResponse<BaseResponse<List<Products>>>>
+    ): Response<APIResponse<List<Products>>>
 
     @POST("/products")
     suspend fun createProduct(@Body product: NewProduct
-    ): Flow<APIResponse<BaseResponse<Products>>>
+    ): Response<APIResponse<Products>>
 
     @DELETE("products/{id}")
     suspend fun deleteProduct(
         @Path("id") id: Int
-    ):Flow<APIResponse<BaseResponse<Void>>>
+    ):Response<APIResponse<Void>>
 
 }

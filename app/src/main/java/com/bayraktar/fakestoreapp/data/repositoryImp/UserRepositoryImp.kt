@@ -13,15 +13,15 @@ import javax.inject.Inject
 class UserRepositoryImp @Inject constructor(
     private val api: UserApiService
 ):UserRepository {
-    override suspend fun getAllUsers(): Flow<APIResponse<BaseResponse<Users>>> {
+    override suspend fun getAllUsers(): Flow<APIResponse<Users>> {
         return api.getAllUsers()
     }
 
-    override suspend fun getSingleUser(id: Int): Flow<APIResponse<BaseResponse<UsersItem>>> {
+    override suspend fun getSingleUser(id: Int): Flow<APIResponse<UsersItem>> {
         return api.getSingleUser(id)
     }
 
-    override suspend fun getUserByLimit(limit: Int): Flow<APIResponse<BaseResponse<Users>>> {
+    override suspend fun getUserByLimit(limit: Int): Flow<APIResponse<Users>> {
         return api.getUserByLimit(limit)
     }
 
