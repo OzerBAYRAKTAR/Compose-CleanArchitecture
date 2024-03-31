@@ -34,7 +34,7 @@ interface ProductApiService {
 
     @GET("/products/categories")
     suspend fun getAllCategories(
-    ): Response<APIResponse<Categories>>
+    ): Response<APIResponse<List<String>>>
 
     @GET("/products/categories/{Categorie}")
     suspend fun specificCategorie(

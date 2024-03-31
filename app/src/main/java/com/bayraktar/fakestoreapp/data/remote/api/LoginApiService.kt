@@ -4,6 +4,7 @@ import com.bayraktar.fakestoreapp.data.model.Carts
 import com.bayraktar.fakestoreapp.data.model.LoginModel
 import com.bayraktar.fakestoreapp.data.model.NewCart
 import com.bayraktar.fakestoreapp.data.model.TokenModel
+import com.bayraktar.fakestoreapp.util.APIResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -11,7 +12,7 @@ import retrofit2.http.POST
 interface LoginApiService {
 
     @POST("/auth/login")
-    suspend fun getLogin(@Body cart: LoginModel): Response<TokenModel>
+    suspend fun getLogin(@Body cart: LoginModel): Response<APIResponse<TokenModel>>
 
 
 }

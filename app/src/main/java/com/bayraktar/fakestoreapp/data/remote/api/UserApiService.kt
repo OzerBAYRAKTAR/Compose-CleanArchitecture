@@ -14,7 +14,7 @@ interface UserApiService {
 
     @GET("/users")
     suspend fun getAllUsers(
-    ): Response<APIResponse<Users>>
+    ): Response<APIResponse<List<UsersItem>>>
 
     @GET("/users/{id}")
     suspend fun getSingleUser(
@@ -24,6 +24,6 @@ interface UserApiService {
     @GET("/users/{limit}")
     suspend fun getUserByLimit(
         @Path("limit") limit: Int
-    ): Response<APIResponse<Users>>
+    ): Response<APIResponse<List<UsersItem>>>
 
 }

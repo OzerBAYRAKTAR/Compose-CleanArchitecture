@@ -15,9 +15,9 @@ import javax.inject.Inject
 
 interface UserRepository {
 
-    suspend fun getAllUsers(): Flow<APIResponse<Users>>
+    suspend fun getAllUsers(): Flow<APIResponse<List<UsersItem>>>
 
     suspend fun getSingleUser(id: Int): Flow<APIResponse<UsersItem>>
 
-    suspend fun getUserByLimit(limit: Int): Flow<APIResponse<Users>>
+    suspend fun getUserByLimit(limit: Int): Flow<APIResponse<List<UsersItem>>>
 }
