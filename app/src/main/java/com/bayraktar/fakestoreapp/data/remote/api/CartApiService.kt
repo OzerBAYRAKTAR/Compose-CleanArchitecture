@@ -44,4 +44,34 @@ interface CartApiService {
     suspend fun deletecart(
         @Path("id") id: Int
     ): Response<APIResponse<Void>>
+
+
+    /*@GET("/carts")
+    suspend fun getAllCarts(
+    ): Response<APIResponse<List<CartsItem>>>
+
+    @GET("/carts/{id}")
+    suspend fun getSingleCart(
+        @Path("id") id: Int
+    ): Response<APIResponse<CartsItem>>
+
+    @GET("/carts/{limit}")
+    suspend fun getCartsByLimit(
+        @Path("limit") limit: Int
+    ): Response<APIResponse<List<CartsItem>>>
+
+    @GET("carts/user/{id}")
+    suspend fun getUserCarts(
+        @Path("id") id: Int
+    ): Response<APIResponse<CartsItem>>
+
+    @POST("/carts")
+    suspend fun createProduct(@Body cart: NewCart
+    ): Response<APIResponse<CartsItem>>
+
+
+    @DELETE("carts/{id}")
+    suspend fun deletecart(
+        @Path("id") id: Int
+    ): Response<APIResponse<Void>>*/
 }
