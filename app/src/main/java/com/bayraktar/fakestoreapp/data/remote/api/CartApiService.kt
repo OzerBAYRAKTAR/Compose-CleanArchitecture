@@ -1,11 +1,8 @@
 package com.bayraktar.fakestoreapp.data.remote.api
 
-import com.bayraktar.fakestoreapp.data.model.Carts
 import com.bayraktar.fakestoreapp.data.model.CartsItem
 import com.bayraktar.fakestoreapp.data.model.NewCart
 import com.bayraktar.fakestoreapp.util.APIResponse
-import com.bayraktar.fakestoreapp.util.BaseResponse
-import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE

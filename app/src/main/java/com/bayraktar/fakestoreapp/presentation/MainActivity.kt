@@ -25,6 +25,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.bayraktar.fakestoreapp.presentation.Login.LoginPage
 import com.bayraktar.fakestoreapp.presentation.ui.theme.FakeStoreAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,44 +33,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LoginPage()
-        }
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun LoginPage() {
-    var id by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
-
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(text = "Login", style = MaterialTheme.typography.headlineMedium)
-        OutlinedTextField(
-            value = id,
-            onValueChange = { id = it },
-            label = { Text(text = "İd") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        OutlinedTextField(
-            value = password,
-            onValueChange = { password = it },
-            label = { Text("Password") },
-            visualTransformation = PasswordVisualTransformation(),
-            keyboardOptions = KeyboardOptions.Default.copy(VisualTransformation.None),
-            modifier = Modifier.fillMaxWidth()
-        )
-        Button(
-            onClick = {
-
-            },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text(text = "Giriş")
         }
     }
 }
