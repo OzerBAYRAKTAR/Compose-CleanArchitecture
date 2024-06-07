@@ -61,3 +61,25 @@ fun BodyContent(modifier: Modifier = Modifier) {
 fun DefaultPreview() {
     MainScreen()
 }
+//@Composable
+//fun BodyContent(modifier: Modifier = Modifier) {
+//    Column(modifier = modifier.fillMaxSize().padding(16.dp), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+//        Text("Main content goes here")
+//    }
+//}
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    MainScreen()
+//}
+//@Composable
+//fun BodyContent(modifier: Modifier = Modifier) {
+//    Column(modifier = modifier.fillMaxSize().padding(16.dp), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+//        Text("Main content goes here")
+//    }
+//}
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    MainScreen()
+//}

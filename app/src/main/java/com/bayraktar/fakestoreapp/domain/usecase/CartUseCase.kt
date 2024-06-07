@@ -102,4 +102,34 @@ class CartUseCase @Inject constructor(
             ))
         }
     }
+  //  suspend fun deletecart() = flow {
+  //      try {
+  //          emit(APIResponse.Loading<BaseResponse<Users>>())
+  //          val users = repo.getAllCarts()
+  //          emit(APIResponse.Success(users))
+  //      } catch (e: HttpException){
+  //          emit(APIResponse.Error(
+  //              e.localizedMessage ?: "Beklenmeyen bir hata oluştu"
+  //          ))
+  //      }catch (e: IOException){
+  //          emit(APIResponse.Error(
+  //              e.localizedMessage ?: "Sunucuya ulaşılamıyor. İnternet bağlantınızı kontrol edin"
+  //          ))
+  //      }
+  //  }
+  //  suspend fun deletecart() = flow {
+  //      try {
+  //          emit(APIResponse.Loading<BaseResponse<Users>>())
+  //          val users = repo.getAllCarts()
+  //          emit(APIResponse.Success(users))
+  //      } catch (e: HttpException){
+  //          emit(APIResponse.Error(
+  //              e.localizedMessage ?: "Beklenmeyen bir hata oluştu"
+  //          ))
+  //      }catch (e: IOException){
+  //          emit(APIResponse.Error(
+  //              e.localizedMessage ?: "Sunucuya ulaşılamıyor. İnternet bağlantınızı kontrol edin"
+  //          ))
+  //      }
+  //  }
 }
